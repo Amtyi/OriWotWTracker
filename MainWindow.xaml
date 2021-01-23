@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OriWotWTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="750" Width="500">
     <Grid>
-        
+        <Image Margin="214,123,214,532" Source="Shuriken.png" Stretch="Fill"/>
+        <Image Margin="283,168,145,487" Source="Spike.png" Stretch="Fill"/>
+        <Image Margin="268,254,160,401" Source="WaterBreath.png" Stretch="Fill"/>
+        <Image Margin="150,254,278,401" Source="Hammer.png" Stretch="Fill"/>
+        <Image Margin="138,168,290,487" Source="Sentry.png" Stretch="Fill"/>
+
+        <Image Margin="209,33,210,613" Source="Sword.png" Stretch="Fill"/>
+        <Image Margin="278,42,150,613" Source="DoubleJump.png" Stretch="Fill"/>
+        <Image Margin="336,87,92,568" Source="Regen.png" Stretch="Fill"/>
+        <Image Margin="369,151,59,504" Source="Bow.png" Stretch="Fill"/>
+        <Image Margin="375,209,48,441" Source="Dash.png" Stretch="Fill"/>
+        <Image Margin="363,266,59,383" Source="Bash.png" Stretch="Fill"/>
+        <Image Margin="332,336,92,315" Source="Grapple.png" Stretch="Fill"/>
+        <Image Margin="257,366,158,276" Source="Glide.png" Stretch="Fill"/>
+        <Image Margin="155,376,270,276" Source="Flap.png" Stretch="Fill"/>
+        <Image Margin="92,347,331,303" Source="WaterDash.png" Stretch="Fill"/>
+        <Image Margin="51,283,372,367" Source="LightBurst.png" Stretch="Fill"/>
+        <Image Margin="32,209,391,441" Source="Flash.png" Stretch="Fill"/>
+        <Image Margin="44,140,379,510" Source="Burrow.png" Stretch="Fill"/>
+        <Image Margin="83,87,345,568" Source="Launch.png" Stretch="Fill"/>
+        <Image Margin="145,51,283,604" Source="WeaponUpgrade1.png" Stretch="Fill"/>
+
+        <Image Margin="214,432,214,223" Source="CompleteWatermillEscape.png" Stretch="Fill"/>
+
+        <Image Margin="217,496,214,162" Source="SpiritLight.png" Stretch="Fill"/>
+        <Image Margin="156,496,275,162" Source="GorlekOre.png" Stretch="Fill"/>
+        <Image Margin="268,496,163,162" Source="Keystone.png" Stretch="Fill"/>
     </Grid>
 </Window>
