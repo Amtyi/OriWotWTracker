@@ -1,17 +1,19 @@
 ﻿using System;
 
-
-class Program
+namespace OriWotWTracker
 {
-    public string OldFileContents;
-        
-    static void Main()
+    class Program
     {
-        // Start the filewatcher 
-        Watcher.Run();
+        public string OldFileContents;
 
-        // Wait for the user to quit the program.
-        Console.WriteLine("Press 'q' to quit the sample.");
-        while (Console.Read() != 'q') ;
+        static void Main()
+        {
+            // Start the filewatcher 
+            Watcher.Run();
+
+            // Wait for the user to quit the program.
+            Console.WriteLine("Press 'q' to quit the sample.");
+            while (Console.Read() != 'q') ;
+        }
     }
 }

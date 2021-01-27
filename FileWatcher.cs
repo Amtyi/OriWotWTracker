@@ -2,51 +2,54 @@
 using System.IO;
 using System.Text.Json;
 
-public class Watcher
+namespace OriWotWTracker
 {
-
-    public static string OldFileContents = "";
-
-    public static void Run()
+    public class Watcher
     {
-        // Create a new FileSystemWatcher and set its properties.
-        FileSystemWatcher watcher = new FileSystemWatcher();
-        
-        watcher.Path = "C:\\moon";
-        watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
-        watcher.Filter = "trackfile.json";
 
-        watcher.Changed += ParseChanges;
+        public static string OldFileContents = "";
 
-        watcher.EnableRaisingEvents = true;
-        
-    }
-
-    private static void ParseChanges(object source, FileSystemEventArgs e)
-    {
-        Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
-        string FileContents = File.ReadAllText(e.FullPath);
-
-        // Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
-        if (FileContents == Watcher.OldFileContents)
+        public static void Run()
         {
-            return;
-        }
+            // Create a new FileSystemWatcher and set its properties.
+            FileSystemWatcher watcher = new FileSystemWatcher();
 
-        Data JsonObject = JsonSerializer.Deserialize<Data>(FileContents);
+            watcher.Path = "C:\\moon";
+            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
+            watcher.Filter = "trackfile.json";
 
-        string[] skills = JsonObject.Skills;
-        string[] upgraded = JsonObject.Upgraded;
-        string[] events = JsonObject.Events;
-        string[] teleporters = JsonObject.Teleporters;
-        string spiritlight = JsonObject.SpiritLight;
-        string keystones = JsonObject.Keystones;
-        string gorlekore = JsonObject.Ore;
+            watcher.Changed += ParseChanges;
 
-        // Do stuff to check if skills need to be updated.
-        // Keep in mind that skills can go back to unaccuired in case of a death or a backup save.
-
-        Watcher.OldFileContents = FileContents;
+            watcher.EnableRaisingEvents = true;
 
         }
+
+        private static void ParseChanges(object source, FileSystemEventArgs e)
+        {
+            Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
+            string FileContents = File.ReadAllText(e.FullPath);
+
+            // Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
+            if (FileContents == Watcher.OldFileContents)
+            {
+                return;
+            }
+
+            Data JsonObject = JsonSerializer.Deserialize<Data>(FileContents);
+
+            string[] skills = JsonObject.Skills;
+            string[] upgraded = JsonObject.Upgraded;
+            string[] events = JsonObject.Events;
+            string[] teleporters = JsonObject.Teleporters;
+            string spiritlight = JsonObject.SpiritLight;
+            string keystones = JsonObject.Keystones;
+            string gorlekore = JsonObject.Ore;
+
+            // Do stuff to check if skills need to be updated.
+            // Keep in mind that skills can go back to unaccuired in case of a death or a backup save.
+
+            Watcher.OldFileContents = FileContents;
+
+        }
+    }
 }
