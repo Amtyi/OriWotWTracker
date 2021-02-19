@@ -189,5 +189,8 @@
     <Resource Include="img\WeaponUpgrade2_unlocked.png" />
     <Resource Include="img\Wisp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\TrackerDesign.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

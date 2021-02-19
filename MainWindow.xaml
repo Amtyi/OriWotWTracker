@@ -8,38 +8,78 @@
         Title="Will of the Wisps item Tracker" Height="750" Width="500" Icon="img/Sein.png" ResizeMode="NoResize">
     <Grid Background="#FF4D4D4D">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="139*"/>
-            <ColumnDefinition Width="107*"/>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="196*"/>
+            <ColumnDefinition Width="215*"/>
         </Grid.ColumnDefinitions>
+        <!--> <Image Source="/img/circle.png" Grid.ColumnSpan="3" Margin="20,-198,57,-67" Grid.Column="1" />  <-->
 
-        <Image Margin="214,209,0,446" Source="img/Wisp.png" Stretch="Fill"/>
+        <!--> Locked Wisps <-->
+        <Image Margin="110,243,202,378" Source="img/Wisp.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.Column="3"/>
 
-        <Image Margin="214,123,0,532" Source="img/Shuriken.png" Stretch="Fill" RenderTransformOrigin="1.112,0.462"/>
-        <Image Margin="5,168,145,487" Source="img/Spike.png" Stretch="Fill" Grid.Column="1"/>
-        <Image Margin="268,254,160,401" Source="img/WaterBreath.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-        <Image Margin="150,254,64,401" Source="img/Hammer.png" Stretch="Fill"/>
-        <Image Margin="138,168,76,487" Source="img/Sentry.png" Stretch="Fill"/>
+        <!--> Locked Trees <-->
+        <Image Margin="118,76,3,571" Source="img/Sword.png" Stretch="Fill" Grid.Column="3"/>
+        <Image Margin="186,76,142,569" Source="img/DoubleJump.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <Image Margin="59,126,90,529" Source="img/Regen.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="93,180,42,459" Source="img/Bow.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="93,234,15,378" Source="img/Dash.png" Stretch="Fill" Grid.Column="4" RenderTransformOrigin="0.5,0.5"/>
+        <Image Margin="93,316,31,313" Source="img/Bash.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="39,389,90,245" Source="img/Grapple.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="156,434,176,209" Source="img/Glide.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <Image Margin="80,434,48,218" Source="img/Flap.png" Stretch="Fill" RenderTransformOrigin="0.654,1.217" Grid.Column="3"/>
+        <Image Margin="24,395,121,239" Source="img/WaterDash.png" Stretch="Fill" RenderTransformOrigin="0.593,0.894" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Image Margin="2,334,169,316" Source="img/LightBurst.png" Stretch="Fill" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Image Margin="17,255,174,377" Source="img/Flash.png" Stretch="Fill" Grid.ColumnSpan="4"/>
+        <Image Margin="27,186,177,459" Source="img/Burrow.png" Stretch="Fill" Grid.ColumnSpan="4"/>
+        <Image Margin="14,121,129,512" Source="img/Launch.png" Stretch="Fill" RenderTransformOrigin="0.446,0.615" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Image Margin="52,90,78,565" Source="img/WeaponUpgrade1.png" Stretch="Fill" Grid.Column="3"/>
 
-        <Image Margin="209,33,210,613" Source="img/Sword.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-        <Image Margin="0,42,150,613" Source="img/DoubleJump.png" Stretch="Fill" Grid.Column="1"/>
-        <Image Margin="58,87,92,568" Source="img/Regen.png" Stretch="Fill" Grid.Column="1"/>
-        <Image Margin="91,151,59,504" Source="img/Bow.png" Stretch="Fill" Grid.Column="1"/>
-        <Image Margin="97,209,48,441" Source="img/Dash.png" Stretch="Fill" Grid.Column="1"/>
-        <Image Margin="85,266,59,383" Source="img/Bash.png" Stretch="Fill" Grid.Column="1"/>
-        <Image Margin="54,336,92,315" Source="img/Grapple.png" Stretch="Fill" Grid.Column="1"/>
-        <Image Margin="257,366,158,276" Source="img/Glide.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-        <Image Margin="155,376,56,276" Source="img/Flap.png" Stretch="Fill"/>
-        <Image Margin="92,347,117,303" Source="img/WaterDash.png" Stretch="Fill"/>
-        <Image Margin="51,283,158,367" Source="img/LightBurst.png" Stretch="Fill"/>
-        <Image Margin="32,209,177,441" Source="img/Flash.png" Stretch="Fill"/>
-        <Image Margin="44,140,165,510" Source="img/Burrow.png" Stretch="Fill"/>
-        <Image Margin="83,87,131,568" Source="img/Launch.png" Stretch="Fill"/>
-        <Image Margin="145,51,69,604" Source="img/WeaponUpgrade1.png" Stretch="Fill"/>
 
-        <Image Margin="214,432,0,223" Source="img/CompleteWatermillEscape.png" Stretch="Fill"/>
+        <!--> Locked Opher <-->
+        <Image Margin="26,255,88,384" Source="img/Shuriken.png" Stretch="Fill" RenderTransformOrigin="1.112,0.462" Grid.Column="3"/>
+        <Image Margin="18,243,108,388" Source="img/Spike.png" Stretch="Fill" RenderTransformOrigin="-0.221,1.813" Grid.Column="4"/>
+        <Image Margin="52,337,60,301" Source="img/WaterBreath.png" Stretch="Fill" Grid.Column="3"/>
+        <Image Margin="176,338,154,301" Source="img/Hammer.png" Stretch="Fill" RenderTransformOrigin="0.287,0.535" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <Image Margin="72,161,43,478" Source="img/Sentry.png" Stretch="Fill" RenderTransformOrigin="0.561,0.247" Grid.Column="3"/>
+        <Image Margin="176,164,162,483" Source="img/Blaze.png" Stretch="Fill" RenderTransformOrigin="-0.508,0.674" Grid.ColumnSpan="2" Grid.Column="3"/>
 
-        <Image Margin="217,496,0,162" Source="img/SpiritLight.png" Stretch="Fill"/>
-        <Image Margin="156,496,61,162" Source="img/GorlekOre.png" Stretch="Fill"/>
-        <Image Margin="268,496,163,162" Source="img/Keystone.png" Stretch="Fill" Grid.ColumnSpan="2"/>
+        <!--> Locked Other <-->
+        <Image Margin="130,540,0,115" Source="img/CompleteWatermillEscape.png" Stretch="Fill" Grid.Column="3"/>
+
+        <!--> Misc <-->
+        <Image Margin="130,606,3,52" Source="img/SpiritLight.png" Stretch="Fill" Grid.Column="3"/>
+        <Image Margin="74,606,60,52" Source="img/GorlekOre.png" Stretch="Fill" Grid.Column="3"/>
+        <Image Margin="186,606,162,52" Source="img/Keystone.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.Column="3"/>
+
+        <!--> Unlocked Trees <-->
+        <Image Margin="118,76,3,571" Source="img/Sword_unlocked.png" Stretch="Fill" Grid.Column="3"/>
+        <Image Margin="186,76,142,569" Source="img/DoubleJump_unlocked.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <Image Margin="59,126,90,529" Source="img/Regen_unlocked.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="93,180,42,459" Source="img/Bow_unlocked.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="93,234,15,378" Source="img/Dash_unlocked.png" Stretch="Fill" Grid.Column="4" RenderTransformOrigin="0.5,0.5"/>
+        <Image Margin="93,316,31,313" Source="img/Bash_unlocked.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="39,389,90,245" Source="img/Grapple_unlocked.png" Stretch="Fill" Grid.Column="4"/>
+        <Image Margin="156,434,176,209" Source="img/Glide_unlocked.png" Stretch="Fill" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <Image Margin="80,434,48,218" Source="img/Flap_unlocked.png" Stretch="Fill" RenderTransformOrigin="0.654,1.217" Grid.Column="3"/>
+        <Image Margin="24,395,121,239" Source="img/WaterDash_unlocked.png" Stretch="Fill" RenderTransformOrigin="0.593,0.894" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Image Margin="2,334,169,316" Source="img/LightBurst_unlocked.png" Stretch="Fill" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <Image Margin="17,255,174,377" Source="img/Flash_unlocked.png" Stretch="Fill" Grid.ColumnSpan="4"/>
+        <Image Margin="27,186,177,459" Source="img/Burrow_unlocked.png" Stretch="Fill" Grid.ColumnSpan="4"/>
+        <Image Margin="14,121,129,512" Source="img/Launch_unlocked.png" Stretch="Fill" RenderTransformOrigin="0.446,0.615" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Image Margin="52,90,78,565" Source="img/WeaponUpgrade1_unlocked.png" Stretch="Fill" Grid.Column="3"/>
+
+        <!--> Unlocked Opher <-->
+        <Image Margin="26,255,88,384" Source="img/Shuriken_unlocked.png" Stretch="Fill" RenderTransformOrigin="1.112,0.462" Grid.Column="3"/>
+        <Image Margin="18,243,108,388" Source="img/Spike_unlocked.png" Stretch="Fill" RenderTransformOrigin="-0.221,1.813" Grid.Column="4"/>
+        <Image Margin="52,337,60,301" Source="img/WaterBreath_unlocked.png" Stretch="Fill" Grid.Column="3"/>
+        <Image Margin="176,338,154,301" Source="img/Hammer_unlocked.png" Stretch="Fill" RenderTransformOrigin="0.287,0.535" Grid.ColumnSpan="2" Grid.Column="3"/>
+        <Image Margin="72,161,43,478" Source="img/Sentry_unlocked.png" Stretch="Fill" RenderTransformOrigin="0.561,0.247" Grid.Column="3"/>
+        <Image Margin="176,164,162,483" Source="img/Blaze_unlocked.png" Stretch="Fill" RenderTransformOrigin="-0.508,0.674" Grid.ColumnSpan="2" Grid.Column="3"/>
+
+        <!--> Unlocked Other <-->
+        <Image Margin="130,535,0,120" Source="img/CompleteWatermillEscape_unlocked.png" Stretch="Fill" Grid.Column="3"/>
+
     </Grid>
 </Window>
