@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace OriWotWTracker
@@ -24,7 +25,7 @@ namespace OriWotWTracker
 
         }
 
-        private static void ParseChanges(object source, FileSystemEventArgs e)
+        public static void ParseChanges(object source, FileSystemEventArgs e)
         {
             Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
             string FileContents = File.ReadAllText(e.FullPath);
@@ -49,7 +50,30 @@ namespace OriWotWTracker
             // Keep in mind that skills can go back to unaccuired in case of a death or a backup save.
 
             Watcher.OldFileContents = FileContents;
+            CheckStringContents(skills, upgraded, events, teleporters);
 
+        }
+        public static void CheckStringContents(string[] skills, string[] upgraded, string[] events, string[] teleporters)
+        {
+            foreach (string skill in skills)
+            {
+                if (skills.Contains("Sword"))
+                {
+                    Console.WriteLine("Works");
+                }
+            }
+            foreach (string upgrade in upgraded)
+            {
+
+            }
+            foreach (string occuredevent in events)
+            {
+
+            }
+            foreach (string teleporter in teleporters)
+            {
+
+            }
         }
     }
 }
