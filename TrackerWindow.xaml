@@ -1,0 +1,47 @@
+﻿<Window x:Class="OriWotWTracker.TrackerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OriWotWTracker"
+        mc:Ignorable="d"
+        Title="Will of the Wisps item Tracker" Height="750" Width="500" Icon="img/Sein.png" ResizeMode="NoResize">
+    <Grid Background="#FF4D4D4D">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="139*"/>
+            <ColumnDefinition Width="107*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Name="Wisp" Margin="214,209,0,446" Source="img/Wisp.png" Stretch="Fill"/>
+        <Image Name="Shuriken" Margin="214,123,0,532" Source="img/Shuriken.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Spike" Margin="5,168,145,487" Source="img/Spike.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="WaterBreath" Margin="268,254,160,401" Source="img/WaterBreath.png" Stretch="Fill" Grid.ColumnSpan="2" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Hammer" Margin="150,254,64,401" Source="img/Hammer.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Sentry" Margin="138,168,76,487" Source="img/Sentry.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+
+        <Image Name="Sword" Margin="209,33,210,613" Source="img/Sword.png" Stretch="Fill" Grid.ColumnSpan="2" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="DoubleJump" Margin="0,42,150,613" Source="img/DoubleJump.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Regen" Margin="58,87,92,568" Source="img/Regen.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Bow" Margin="91,151,59,504" Source="img/Bow.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Dash" Margin="97,209,48,441" Source="img/Dash.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Bash" Margin="85,266,59,383" Source="img/Bash.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Grapple" Margin="54,336,92,315" Source="img/Grapple.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Glide" Margin="257,366,158,276" Source="img/Glide.png" Stretch="Fill" Grid.ColumnSpan="2" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Flap" Margin="155,376,56,276" Source="img/Flap.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="WaterDash" Margin="92,347,117,303" Source="img/WaterDash.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="LightBurst" Margin="51,283,158,367" Source="img/LightBurst.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Flash" Margin="32,209,177,441" Source="img/Flash.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Burrow" Margin="44,140,165,510" Source="img/Burrow.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Launch" Margin="83,87,131,568" Source="img/Launch.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="WeaponUpgrade" Margin="145,51,69,604" Source="img/WeaponUpgrade.png" Stretch="Fill" MouseLeftButtonUp="Cycle_WeaponUpgrade" MouseRightButtonUp="Toggle_off"/>
+
+        <Image Name ="CompleteWatermillEscape" Margin="214,432,0,223" Source="img/CompleteWatermillEscape.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on"  MouseRightButtonUp="Toggle_off"/>
+
+        <Image Name ="SpiritLight" Margin="217,496,0,162" Source="img/SpiritLight.png" Stretch="Fill"/>
+        <TextBlock Name="SpiritLight_amount" Margin="217,559,213.6,131.8" Grid.ColumnSpan="2" FontSize="20" Foreground="White" TextAlignment="Center" Text="159412"/>
+        <Image Name ="GorlekOre" Margin="129,496,87.2,161.8" Source="img/GorlekOre.png" Stretch="Fill"/>
+        <TextBlock Name="GorlekOre_amount" Margin="129,559,87.2,131.8" FontSize="20" Foreground="White" TextAlignment="Center" Text="20"/>
+        <Image Name ="KeyStone" Margin="33.8,496,117.6,161.8" Source="img/Keystone.png" Stretch="Fill" RenderTransformOrigin="1.116,0.507" Grid.Column="1"/>
+        <TextBlock Name="KeyStone_amount" Margin="33.8,559,0,131.8" FontSize="20" Foreground="White" TextAlignment="Center" Text="15" HorizontalAlignment="Left" Width="63" Grid.Column="1"/>
+    </Grid>
+</Window>

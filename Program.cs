@@ -1,19 +1,26 @@
 ﻿using System;
+using System.Windows;
+using System.Runtime.InteropServices;
 
 namespace OriWotWTracker
 {
     class Program
     {
-        public string OldFileContents;
-
+        [STAThread]
         static void Main()
         {
+            //AllocConsole();
+
             // Start the filewatcher 
             Watcher.Run();
 
-            // Wait for the user to quit the program.
-            Console.WriteLine("Press 'q' to quit the sample.");
-            while (Console.Read() != 'q') ;
+            Application app = new Application();
+            app.Run(new TrackerWindow());
         }
+
+        //[DllImport("kernel32.dll", SetLastError = true)]
+        //[return: MarshalAs(UnmanagedType.Bool)]
+        //static extern bool AllocConsole();
     }
+
 }

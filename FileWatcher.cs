@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Diagnostics;
+using System.Windows;
 
 namespace OriWotWTracker
 {
@@ -23,11 +25,13 @@ namespace OriWotWTracker
 
             watcher.EnableRaisingEvents = true;
 
+            string a = "a";
+
         }
 
         public static void ParseChanges(object source, FileSystemEventArgs e)
         {
-            Console.WriteLine($"File: {e.FullPath} {e.ChangeType}");
+            Debug.WriteLine($"File: {e.FullPath} {e.ChangeType}");
             string FileContents = File.ReadAllText(e.FullPath);
 
             // Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
@@ -36,15 +40,39 @@ namespace OriWotWTracker
                 return;
             }
 
-            Data JsonObject = JsonSerializer.Deserialize<Data>(FileContents);
 
-            string[] skills = JsonObject.Skills;
-            string[] upgraded = JsonObject.Upgraded;
-            string[] events = JsonObject.Events;
-            string[] teleporters = JsonObject.Teleporters;
-            string spiritlight = JsonObject.SpiritLight;
-            string keystones = JsonObject.Keystones;
-            string gorlekore = JsonObject.Ore;
+            string[] skills;
+            string[] upgraded;
+            string[] events;
+            string[] teleporters;
+            string spiritlight;
+            string keystones;
+            string gorlekore;
+
+            try
+            {
+                Data JsonObject = JsonSerializer.Deserialize<Data>(FileContents);
+
+                skills = JsonObject.Skills;
+                upgraded = JsonObject.Upgraded;
+                events = JsonObject.Events;
+                teleporters = JsonObject.Teleporters;
+                spiritlight = JsonObject.SpiritLight;
+                keystones = JsonObject.Keystones;
+                gorlekore = JsonObject.Ore;
+
+            }
+            catch
+            {
+                Debug.WriteLine("Unable to parse the trackfile contents.");
+                return;
+            }
+
+            foreach (string skill in skills)
+            {
+                
+            }
+
 
             // Do stuff to check if skills need to be updated.
             // Keep in mind that skills can go back to unaccuired in case of a death or a backup save.
