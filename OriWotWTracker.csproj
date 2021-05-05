@@ -89,7 +89,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Data.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="FileWatcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="TrackerWindow.xaml.cs">

@@ -20,9 +20,16 @@ namespace OriWotWTracker
     /// </summary>
     public partial class TrackerWindow : Window
     {
-        public TrackerWindow()
+
+        private GameState current_gamestate;
+
+        public GameState Current_gamestate { get => current_gamestate; set => current_gamestate = value; }
+
+        public TrackerWindow(GameState Current_Gamestate)
         {
-            Watcher.Run();
+            Current_gamestate = Current_Gamestate;
+            DataContext = Current_gamestate;
+
             InitializeComponent();
         }
 
@@ -44,22 +51,22 @@ namespace OriWotWTracker
             img.Source = new BitmapImage(urisource);
         }
 
-        private void Cycle_WeaponUpgrade(object sender, MouseButtonEventArgs e)
-        {
+        //private void Cycle_WeaponUpgrade(object sender, MouseButtonEventArgs e)
+        //{
 
-            BitmapImage Weapon0 = new BitmapImage(new Uri("img/WeaponUpgrade.png", UriKind.Relative));
-            BitmapImage Weapon1 = new BitmapImage(new Uri("img/WeaponUpgrade_unlocked.png", UriKind.Relative));
-            BitmapImage Weapon2 = new BitmapImage(new Uri("img/WeaponUpgrade2_unlocked.png", UriKind.Relative));
+        //    BitmapImage Weapon0 = new BitmapImage(new Uri("img/WeaponUpgrade.png", UriKind.Relative));
+        //    BitmapImage Weapon1 = new BitmapImage(new Uri("img/WeaponUpgrade_unlocked.png", UriKind.Relative));
+        //    BitmapImage Weapon2 = new BitmapImage(new Uri("img/WeaponUpgrade2_unlocked.png", UriKind.Relative));
 
 
-            if (WeaponUpgrade.Source.ToString().Contains("img/WeaponUpgrade.png"))
-            {
-                WeaponUpgrade.Source = Weapon1;
-            }
-            else if (WeaponUpgrade.Source.ToString().Contains("img/WeaponUpgrade_unlocked.png"))
-            {
-                WeaponUpgrade.Source = Weapon2;
-            }
-        }
+        //    if (WeaponUpgrade.Source.ToString().Contains("img/WeaponUpgrade.png"))
+        //    {
+        //        WeaponUpgrade.Source = Weapon1;
+        //    }
+        //    else if (WeaponUpgrade.Source.ToString().Contains("img/WeaponUpgrade_unlocked.png"))
+        //    {
+        //        WeaponUpgrade.Source = Weapon2;
+        //    }
+        //}
     }
 }

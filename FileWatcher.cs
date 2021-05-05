@@ -4,103 +4,80 @@ using System.Linq;
 using System.Text.Json;
 using System.Diagnostics;
 using System.Windows;
+using System.Collections.Generic;
 
 namespace OriWotWTracker
 {
-    public class Watcher
+    public class JSONObj
+    {
+        public int spiritLight { get; set; }
+        public int keystones { get; set; }
+        public int ore { get; set; }
+        public IList<string> skills { get; set; }
+        public IList<string> upgraded { get; set; }
+        public IList<string> events { get; set; }
+        public IList<string> teleporters { get; set; }
+    }
+
+
+    public static class FileWatcher
     {
 
         public static string OldFileContents = "";
+        private static Controller controller;
 
-        public static void Run()
+        public static void Run(Controller Controller)
         {
+            controller = Controller;
+
             // Create a new FileSystemWatcher and set its properties.
-            FileSystemWatcher watcher = new FileSystemWatcher();
+            FileSystemWatcher filewatcher = new FileSystemWatcher();
 
-            watcher.Path = "C:\\moon";
-            watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
-            watcher.Filter = "trackfile.json";
+            filewatcher.Path = "C:\\moon";
+            filewatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
+            filewatcher.Filter = "trackfile.json";
 
-            watcher.Changed += ParseChanges;
+            filewatcher.Changed += ParseChanges;
 
-            watcher.EnableRaisingEvents = true;
-
-            string a = "a";
-
+            filewatcher.EnableRaisingEvents = true;
         }
 
         public static void ParseChanges(object source, FileSystemEventArgs e)
         {
+
             Debug.WriteLine($"File: {e.FullPath} {e.ChangeType}");
-            string FileContents = File.ReadAllText(e.FullPath);
-
-            // Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
-            if (FileContents == Watcher.OldFileContents)
-            {
-                return;
-            }
-
-
-            string[] skills;
-            string[] upgraded;
-            string[] events;
-            string[] teleporters;
-            string spiritlight;
-            string keystones;
-            string gorlekore;
-
+            string FileContents;
             try
             {
-                Data JsonObject = JsonSerializer.Deserialize<Data>(FileContents);
+                FileContents = File.ReadAllText(e.FullPath);
 
-                skills = JsonObject.Skills;
-                upgraded = JsonObject.Upgraded;
-                events = JsonObject.Events;
-                teleporters = JsonObject.Teleporters;
-                spiritlight = JsonObject.SpiritLight;
-                keystones = JsonObject.Keystones;
-                gorlekore = JsonObject.Ore;
+                // Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
+                if (FileContents == FileWatcher.OldFileContents)
+                {
+                    return;
+                }
 
+            
+                JSONObj JsonObject = JsonSerializer.Deserialize<JSONObj>(FileContents);
+
+
+                FileWatcher.OldFileContents = FileContents;
+                controller.ParseChanges(JsonObject);
+            }
+            catch (IOException err)
+            {
+                if (err.HResult == -2147024864)
+                {
+                    return;
+                }
+                
+                Debug.WriteLine("Unable to parse the trackfile contents.");
+                return;
             }
             catch
             {
                 Debug.WriteLine("Unable to parse the trackfile contents.");
                 return;
-            }
-
-            foreach (string skill in skills)
-            {
-                
-            }
-
-
-            // Do stuff to check if skills need to be updated.
-            // Keep in mind that skills can go back to unaccuired in case of a death or a backup save.
-
-            Watcher.OldFileContents = FileContents;
-            CheckStringContents(skills, upgraded, events, teleporters);
-
-        }
-        public static void CheckStringContents(string[] skills, string[] upgraded, string[] events, string[] teleporters)
-        {
-            foreach (string skill in skills)
-            {
-                if (skills.Contains("Sword"))
-                {
-                    Console.WriteLine("Works");
-                }
-            }
-            foreach (string upgrade in upgraded)
-            {
-
-            }
-            foreach (string occuredevent in events)
-            {
-
-            }
-            foreach (string teleporter in teleporters)
-            {
-
             }
         }
     }
