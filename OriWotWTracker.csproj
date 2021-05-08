@@ -161,8 +161,8 @@
     <Resource Include="img\LightBurst_unlocked.png" />
     <Resource Include="img\MapStone.png" />
     <Resource Include="img\Quest.png" />
-    <Resource Include="img\Regen.png" />
-    <Resource Include="img\Regen_unlocked.png" />
+    <Resource Include="img\Regenerate.png" />
+    <Resource Include="img\Regenerate_unlocked.png" />
     <Resource Include="img\Sein.png" />
     <Resource Include="img\Sentry.png" />
     <Resource Include="img\Sentry_unlocked.png" />

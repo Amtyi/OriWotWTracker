@@ -36,9 +36,6 @@ namespace OriWotWTracker
             Collected = false;
             source_active = new BitmapImage(new Uri("img/" + Name + "_unlocked.png", UriKind.Relative));
             source_inactive = new BitmapImage(new Uri("img/" + Name + ".png", UriKind.Relative));
-
-            //source_active.Freeze();
-            //source_inactive.Freeze();
         }
     }
 

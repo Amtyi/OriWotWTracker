@@ -47,7 +47,7 @@ namespace OriWotWTracker
         {
 
             // Small sleep to prevent the tracker trying to access the file before its ready.
-            Thread.Sleep(100);
+            Thread.Sleep(75);
 
             Debug.WriteLine($"File: {e.FullPath} {e.ChangeType}");
             string FileContents;
@@ -78,7 +78,7 @@ namespace OriWotWTracker
                 Debug.WriteLine("Unable to parse the trackfile contents.");
                 return;
             }
-            catch
+            catch (Exception err)
             {
                 Debug.WriteLine("Unable to parse the trackfile contents.");
                 return;

@@ -15,25 +15,25 @@
         <Image Name="Wisp" Margin="214,209,0,446" Source="img/Wisp.png" Stretch="Fill"/>
 
         <Image Name="Sword" ToolTip="Sword" Margin="209,108,209.6,537.8" Source="{Binding Skills[Sword].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.ColumnSpan="2"/>
-        <Image Name="Shuriken" ToolTip="Shuriken" Margin="3.8,254,144.6,400.8" Source="img/Shuriken.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1"/>
-        <Image Name="Spike" ToolTip="Spike" Margin="5,168,145,487" Source="img/Spike.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Hammer" ToolTip="Hammer" Margin="150,254,64,401" Source="img/Hammer.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Sentry" ToolTip="Sentry" Margin="138,168,76,487" Source="img/Sentry.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Shuriken" ToolTip="Shuriken" Margin="3.8,254,144.6,400.8" Source="{Binding Skills[Shuriken].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1"/>
+        <Image Name="Spike" ToolTip="Spike" Margin="5,168,145,487" Source="{Binding Skills[Spike].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Hammer" ToolTip="Hammer" Margin="150,254,64,401" Source="{Binding Skills[Hammer].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Sentry" ToolTip="Sentry" Margin="138,168,76,487" Source="{Binding Skills[Sentry].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
 
-        <Image Name="WaterBreath" ToolTip="Water Breath" Margin="217,22,210.6,632.8" Source="img/WaterBreath.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" RenderTransformOrigin="-2.995,3.014" Grid.ColumnSpan="2"/>
-        <Image Name="DoubleJump" ToolTip="Double Jump" Margin="5.8,51,144.6,603.8" Source="img/DoubleJump.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Regenerate" ToolTip="Regen" Margin="58,87,92,568" Source="img/Regen.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Bow" ToolTip="Bow" Margin="91,151,59,504" Source="img/Bow.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Dash" ToolTip="Dash" Margin="97,209,48,441" Source="img/Dash.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Bash" ToolTip="Bash" Margin="85,266,59,383" Source="img/Bash.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Grapple" ToolTip="Grapple" Margin="54,336,92,315" Source="img/Grapple.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Glide" ToolTip="Glide" Margin="270,362,144.6,279.8" Source="img/Glide.png" Stretch="Fill" Grid.ColumnSpan="2" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Flap" ToolTip="Flap" Margin="209,382,1.2,269.8" Source="img/Flap.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="WaterDash" ToolTip="Water Dash" Margin="145,370,64.2,279.8" Source="img/WaterDash.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="LightBurst" ToolTip="Light Burst" Margin="75,336,134.2,313.8" Source="img/LightBurst.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Flash" ToolTip="Flash" Margin="32,275,177.2,374.8" Source="img/Flash.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Burrow" ToolTip="Burrow" Margin="19,209,190.2,440.8" Source="img/Burrow.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Launch" ToolTip="Launch" Margin="32,143,182.2,511.8" Source="img/Launch.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="WaterBreath" ToolTip="Water Breath" Margin="217,22,210.6,632.8" Source="{Binding Skills[WaterBreath].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" RenderTransformOrigin="-2.995,3.014" Grid.ColumnSpan="2"/>
+        <Image Name="DoubleJump" ToolTip="Double Jump" Margin="5.8,51,144.6,603.8" Source="{Binding Skills[DoubleJump].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Regenerate" ToolTip="Regenerate" Margin="58,87,92,568" Source="{Binding Skills[Regenerate].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Bow" ToolTip="Bow" Margin="91,151,59,504" Source="{Binding Skills[Bow].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Dash" ToolTip="Dash" Margin="97,209,48,441" Source="{Binding Skills[Dash].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Bash" ToolTip="Bash" Margin="85,266,59,383" Source="{Binding Skills[Bash].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Grapple" ToolTip="Grapple" Margin="54,336,92,315" Source="{Binding Skills[Grapple].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Glide" ToolTip="Glide" Margin="270,362,144.6,279.8" Source="{Binding Skills[Glide].Source_current}" Stretch="Fill" Grid.ColumnSpan="2" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Flap" ToolTip="Flap" Margin="209,382,1.2,269.8" Source="{Binding Skills[Flap].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="WaterDash" ToolTip="Water Dash" Margin="145,370,64.2,279.8" Source="{Binding Skills[WaterDash].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="LightBurst" ToolTip="Light Burst" Margin="75,336,134.2,313.8" Source="{Binding Skills[LightBurst].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Flash" ToolTip="Flash" Margin="32,275,177.2,374.8" Source="{Binding Skills[Flash].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Burrow" ToolTip="Burrow" Margin="19,209,190.2,440.8" Source="{Binding Skills[Burrow].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <Image Name="Launch" ToolTip="Launch" Margin="32,143,182.2,511.8" Source="{Binding Skills[Launch].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
         <Image Name="WeaponUpgrade" ToolTip="Weapon Upgrade 1" Margin="145,51,69,604" Source="img/WeaponUpgrade.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
         <Image Name="WeaponUpgrade2" ToolTip="Weapon Upgrade 2" Margin="80,87,134.2,567.8" Source="img/WeaponUpgrade2.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
 
