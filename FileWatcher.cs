@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Diagnostics;
 using System.Windows;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace OriWotWTracker
 {
@@ -45,6 +46,9 @@ namespace OriWotWTracker
         public static void ParseChanges(object source, FileSystemEventArgs e)
         {
 
+            // Small sleep to prevent the tracker trying to access the file before its ready.
+            Thread.Sleep(100);
+
             Debug.WriteLine($"File: {e.FullPath} {e.ChangeType}");
             string FileContents;
             try
@@ -52,10 +56,10 @@ namespace OriWotWTracker
                 FileContents = File.ReadAllText(e.FullPath);
 
                 // Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
-                if (FileContents == FileWatcher.OldFileContents)
-                {
-                    return;
-                }
+                //if (FileContents == FileWatcher.OldFileContents)
+                //{
+                //    return;
+                //}
 
             
                 JSONObj JsonObject = JsonSerializer.Deserialize<JSONObj>(FileContents);

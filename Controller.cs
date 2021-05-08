@@ -120,21 +120,15 @@ namespace OriWotWTracker
                 TrackerWindow window = (TrackerWindow)Application.Current.MainWindow;
                 window.DataContext = gamestate;
             });
+            
+            //foreach (string skill in gamestate.Skills.Keys)
+            //{
+            //    Current_Gamestate.Skills[skill].Collected = gamestate.Skills[skill].Collected;
+            //}
 
-            foreach (string skill in gamestate.Skills.Keys)
-            {
-                Current_Gamestate.Skills[skill].Collected = gamestate.Skills[skill].Collected;
-            }
-
-            Current_Gamestate.Ore.Amount = gamestate.Ore.Amount;
-            Current_Gamestate.Keystones.Amount = gamestate.Keystones.Amount;
-            Current_Gamestate.SpiritLight.Amount = gamestate.SpiritLight.Amount;
-
-
-
-
-
-
+            //Current_Gamestate.Ore.Amount = gamestate.Ore.Amount;
+            //Current_Gamestate.Keystones.Amount = gamestate.Keystones.Amount;
+            //Current_Gamestate.SpiritLight.Amount = gamestate.SpiritLight.Amount;
 
             //foreach (KeyValuePair<string, Skill> skill in gamestate.Skills)
             //{

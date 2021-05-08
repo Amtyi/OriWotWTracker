@@ -14,7 +14,7 @@
 
         <Image Name="Wisp" Margin="214,209,0,446" Source="img/Wisp.png" Stretch="Fill"/>
 
-        <Image Name="Sword" ToolTip="Sword" Margin="209,108,209.6,537.8" Source="img/Sword.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.ColumnSpan="2"/>
+        <Image Name="Sword" ToolTip="Sword" Margin="209,108,209.6,537.8" Source="{Binding Skills[Sword].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.ColumnSpan="2"/>
         <Image Name="Shuriken" ToolTip="Shuriken" Margin="3.8,254,144.6,400.8" Source="img/Shuriken.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1"/>
         <Image Name="Spike" ToolTip="Spike" Margin="5,168,145,487" Source="img/Spike.png" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
         <Image Name="Hammer" ToolTip="Hammer" Margin="150,254,64,401" Source="img/Hammer.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>

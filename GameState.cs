@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace OriWotWTracker
 {
@@ -21,18 +22,23 @@ namespace OriWotWTracker
 
     public class Skill
     {
+        public string name;
+        BitmapImage source_active;
+        BitmapImage source_inactive;
+
         public bool Collected { get; set; }
         public bool Upgraded { get; set; }
-        public string Source { get; set; }
-        //public Image image;
-        public string name;
+        public BitmapImage Source_current { get { return Collected ? source_active : source_inactive; } }
 
-        //public Skill(string Name, Image img)
         public Skill(string Name)
         {
             name = Name;
             Collected = false;
-            //image = img;
+            source_active = new BitmapImage(new Uri("img/" + Name + "_unlocked.png", UriKind.Relative));
+            source_inactive = new BitmapImage(new Uri("img/" + Name + ".png", UriKind.Relative));
+
+            //source_active.Freeze();
+            //source_inactive.Freeze();
         }
     }
 
@@ -95,7 +101,7 @@ namespace OriWotWTracker
         private Collectible keystones = new Collectible("Keystones");
         private Collectible ore = new Collectible("Ore");
 
-        public Dictionary<string, Skill> Skills = new Dictionary<string, Skill>();
+        public Dictionary<string, Skill> skills = new Dictionary<string, Skill>();
         public Dictionary<string, Event> Events = new Dictionary<string, Event>();
         public Dictionary<string, Teleporter> Teleporters = new Dictionary<string, Teleporter>();
 
@@ -103,11 +109,13 @@ namespace OriWotWTracker
         public Collectible Keystones { get => keystones; set => keystones = value; }
         public Collectible Ore { get => ore; set => ore = value; }
 
+        public Dictionary<string, Skill> Skills { get => skills; set => skills = value; }
+
         public GameState()
         {
             foreach (string skill in ref_skills)
             {
-                Skills.Add(skill, new Skill(skill));
+                skills.Add(skill, new Skill(skill));
             }
         }
     }
