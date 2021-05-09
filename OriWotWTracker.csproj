@@ -182,10 +182,10 @@
     <Resource Include="img\WaterBreath_unlocked.png" />
     <Resource Include="img\WaterDash.png" />
     <Resource Include="img\WaterDash_unlocked.png" />
-    <Resource Include="img\WeaponUpgrade.png" />
-    <Resource Include="img\WeaponUpgrade2.png" />
-    <Resource Include="img\WeaponUpgrade2_unlocked.png" />
-    <Resource Include="img\WeaponUpgrade_unlocked.png" />
+    <Resource Include="img\DamageUp.png" />
+    <Resource Include="img\DamageUp2.png" />
+    <Resource Include="img\DamageUp2_unlocked.png" />
+    <Resource Include="img\DamageUp_unlocked.png" />
     <Resource Include="img\Wisp.png" />
   </ItemGroup>
   <ItemGroup>

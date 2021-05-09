@@ -76,6 +76,7 @@ namespace OriWotWTracker
             "Shuriken",
             "Hammer",
             "Sentry",
+            "Blaze",
             "WaterBreath",
             "DoubleJump",
             "Regenerate",
@@ -90,8 +91,8 @@ namespace OriWotWTracker
             "Flash",
             "Burrow",
             "Launch",
-            "WeaponUpgrade2",
-            "WeaponUpgrade1"
+            "DamageUp",
+            "DamageUp2"
         };
 
         private Collectible spiritlight = new Collectible("SpiritLight");

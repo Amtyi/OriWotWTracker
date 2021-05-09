@@ -55,13 +55,13 @@ namespace OriWotWTracker
             {
                 FileContents = File.ReadAllText(e.FullPath);
 
-                // Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
+                ////Since the file gets updated on every save, we skip parsing if the contents didn't actually change.
                 //if (FileContents == FileWatcher.OldFileContents)
                 //{
                 //    return;
                 //}
 
-            
+
                 JSONObj JsonObject = JsonSerializer.Deserialize<JSONObj>(FileContents);
 
 

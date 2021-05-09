@@ -37,6 +37,16 @@ namespace OriWotWTracker
                     gamestate.Skills[skill].Collected = true;
                 }
 
+                // Probably not the best way of doing this, but it works.
+                if (data.upgraded.Contains("DamageUp"))
+                {
+                    gamestate.Skills["DamageUp2"].Collected = true;
+                }
+                else
+                {
+                    gamestate.Skills["DamageUp2"].Collected = false;
+                }
+
                 gamestate.Ore.Amount = data.ore;
                 gamestate.Keystones.Amount = data.keystones;
                 gamestate.SpiritLight.Amount = data.spiritLight;
