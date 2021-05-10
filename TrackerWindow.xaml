@@ -13,6 +13,17 @@
             <ColumnDefinition Width="139*"/>
             <ColumnDefinition Width="107*"/>
         </Grid.ColumnDefinitions>
+        
+        <Image x:Name="image"  HorizontalAlignment="Left" Height="721" VerticalAlignment="Top" Width="494" Grid.ColumnSpan="2" Margin="0,0,0,0" MouseRightButtonUp="Trigger_contextMenu" Opacity="0">
+            <Image.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Menu item 1" />
+                    <MenuItem Header="Menu item 2" />
+                    <Separator />
+                    <MenuItem Header="Menu item 3" />
+                </ContextMenu>
+            </Image.ContextMenu>
+        </Image>
 
         <Image Name="Wisp" Margin="219,209,209.6,445.8" Source="img/Wisp.png" Stretch="Fill" Grid.ColumnSpan="2"/>
 

@@ -55,6 +55,14 @@ namespace OriWotWTracker
             window.Topmost = true;
         }
 
+        private void Trigger_contextMenu(object sender, MouseButtonEventArgs e)
+        {
+            Image image = sender as Image;
+            ContextMenu contextMenu = image.ContextMenu;
+            contextMenu.PlacementTarget = image;
+            contextMenu.IsOpen = true;
+        }
+
 
         //private void Cycle_WeaponUpgrade(object sender, MouseButtonEventArgs e)
         //{
