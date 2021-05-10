@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OriWotWTracker"
         mc:Ignorable="d"
+        Closing="Window_Closing"
+        Deactivated="Window_Deactivated"
         Title="Will of the Wisps item Tracker" Height="750" Width="500" Icon="img/Sein.png" ResizeMode="NoResize">
     <Grid Background="#FF4D4D4D">
         <Grid.ColumnDefinitions>

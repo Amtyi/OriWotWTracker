@@ -49,6 +49,12 @@ namespace OriWotWTracker
             ConfigController.SetConfig("ypos", Top.ToString());
         }
 
+        private void Window_Deactivated(object sender, EventArgs e)
+        {
+            Window window = (Window)sender;
+            window.Topmost = true;
+        }
+
 
         //private void Cycle_WeaponUpgrade(object sender, MouseButtonEventArgs e)
         //{
