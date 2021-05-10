@@ -10,4 +10,4 @@ Below is a list of ideas that are planned to be implemented
 - Settings Menu
 - Tracking more things, for example shards or quests
 - Save and Loading tracker position
-- Tracker always on top option
+- Toggle tracker on top
