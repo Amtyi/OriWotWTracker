@@ -1,8 +1,11 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace OriWotWTracker
 {
@@ -14,8 +17,6 @@ namespace OriWotWTracker
         private GameState current_gamestate;
 
         public GameState Current_Gamestate { get => current_gamestate; set => current_gamestate = value; }
-        public string Seedname { get; set; }
-        public string CurrentSeedPath { get; set; }
 
         //private readonly Dictionary<string, Image> ref_image;
 
@@ -27,7 +28,7 @@ namespace OriWotWTracker
 
         public void ParseChanges(JSONObj data)
         {
-            view.Dispatcher.Invoke(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
                 GameState gamestate = new GameState();
 
@@ -55,21 +56,5 @@ namespace OriWotWTracker
                 window.DataContext = gamestate;
             });
         }
-
-        public void UpdateSeedName(string Seedpath)
-        {
-            CurrentSeedPath = Seedpath;
-            string config = File.ReadLines(Seedpath).Last().Replace("// Config: ", "");
-
-            var configjson = JsonConvert.DeserializeObject<JToken>(config);
-            var flags = configjson["flags"];
-
-
-
-
-
-        }
-
-
-    }
+	}
 }

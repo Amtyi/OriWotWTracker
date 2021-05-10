@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Diagnostics;
+using System.Windows;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -18,7 +20,8 @@ namespace OriWotWTracker
         public IList<string> teleporters { get; set; }
     }
 
-    public static class TrackFileWatcher
+
+    public static class FileWatcher
     {
 
         public static string OldFileContents = "";
@@ -62,7 +65,7 @@ namespace OriWotWTracker
                 JSONObj JsonObject = JsonSerializer.Deserialize<JSONObj>(FileContents);
 
 
-                TrackFileWatcher.OldFileContents = FileContents;
+                FileWatcher.OldFileContents = FileContents;
                 controller.ParseChanges(JsonObject);
             }
             catch (IOException err)
