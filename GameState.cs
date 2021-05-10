@@ -42,14 +42,14 @@ namespace OriWotWTracker
     public class Event
     {
         public bool collected;
-        public Image image;
+        //public Image image;
         public string name;
 
         public Event(string Name, Image img)
         {
             name = Name;
             collected = false;
-            image = img;
+            //image = img;
         }
     }
 
@@ -102,12 +102,14 @@ namespace OriWotWTracker
         public Dictionary<string, Skill> skills = new Dictionary<string, Skill>();
         public Dictionary<string, Event> Events = new Dictionary<string, Event>();
         public Dictionary<string, Teleporter> Teleporters = new Dictionary<string, Teleporter>();
+        public Dictionary<string, Event> trees = new Dictionary<string, Event>();
 
         public Collectible SpiritLight { get => spiritlight; set => spiritlight = value; }
         public Collectible Keystones { get => keystones; set => keystones = value; }
         public Collectible Ore { get => ore; set => ore = value; }
 
         public Dictionary<string, Skill> Skills { get => skills; set => skills = value; }
+        public Dictionary<string, Event> Trees { get => trees; set => trees = value; }
 
         public GameState()
         {
