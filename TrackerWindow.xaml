@@ -13,14 +13,11 @@
             <ColumnDefinition Width="139*"/>
             <ColumnDefinition Width="107*"/>
         </Grid.ColumnDefinitions>
-        
-        <Image x:Name="image"  HorizontalAlignment="Left" Height="721" VerticalAlignment="Top" Width="494" Grid.ColumnSpan="2" Margin="0,0,0,0" MouseRightButtonUp="Trigger_contextMenu" Opacity="0">
+
+        <Image x:Name="image" Source="img/gear.png" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="36" MouseLeftButtonUp="Trigger_contextMenu" Grid.Column="1" Margin="178.8,0,-0.4,0">
             <Image.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Menu item 1" />
-                    <MenuItem Header="Menu item 2" />
-                    <Separator />
-                    <MenuItem Header="Menu item 3" />
+                    <MenuItem Name="AlwaysOnTop" Header="Always on top" IsCheckable="True" Checked="AlwaysOnTop_Checked" Unchecked="AlwaysOnTop_Unchecked"/>
                 </ContextMenu>
             </Image.ContextMenu>
         </Image>

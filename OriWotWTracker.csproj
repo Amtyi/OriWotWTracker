@@ -199,5 +199,8 @@
   <ItemGroup>
     <Resource Include="img\TrackerDesign.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\gear.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

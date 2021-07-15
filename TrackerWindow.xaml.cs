@@ -12,6 +12,8 @@ namespace OriWotWTracker
     public partial class TrackerWindow : Window
     {
 
+        private bool always_on_top;
+
         private GameState current_gamestate;
 
         public GameState Current_gamestate { get => current_gamestate; set => current_gamestate = value; }
@@ -20,6 +22,18 @@ namespace OriWotWTracker
         {
             Current_gamestate = Current_Gamestate;
             DataContext = Current_gamestate;
+
+            always_on_top = bool.Parse(ConfigController.GetConfig("AlwaysOnTop", "false"));
+
+            if (always_on_top)
+            {
+                this.Topmost = true;
+            }
+            else
+            {
+                this.Topmost = false;
+            }
+
 
             InitializeComponent();
         }
@@ -52,7 +66,10 @@ namespace OriWotWTracker
         private void Window_Deactivated(object sender, EventArgs e)
         {
             Window window = (Window)sender;
-            window.Topmost = true;
+            if (always_on_top)
+            {
+                window.Topmost = true;
+            }
         }
 
         private void Trigger_contextMenu(object sender, MouseButtonEventArgs e)
@@ -61,6 +78,20 @@ namespace OriWotWTracker
             ContextMenu contextMenu = image.ContextMenu;
             contextMenu.PlacementTarget = image;
             contextMenu.IsOpen = true;
+        }
+
+        private void AlwaysOnTop_Checked(object sender, RoutedEventArgs e)
+        {
+            always_on_top = true;
+            this.Topmost = true;
+            ConfigController.SetConfig("AlwaysOnTop", "true");
+        }
+
+        private void AlwaysOnTop_Unchecked(object sender, RoutedEventArgs e)
+        {
+            always_on_top = false;
+            this.Topmost = false;
+            ConfigController.SetConfig("AlwaysOnTop", "false");
         }
 
 
