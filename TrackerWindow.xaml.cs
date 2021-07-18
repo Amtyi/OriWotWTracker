@@ -1,11 +1,102 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 
 namespace OriWotWTracker
 {
+    /// <summary>
+    /// Image that switches to monochrome when disabled.
+    /// </summary>
+    public class GrayscaleEffect : ShaderEffect
+    {
+        public GrayscaleEffect()
+        {
+            PixelShader = CreatePixelShader();
+            UpdateShaderValue(InputProperty);
+            UpdateShaderValue(SaturationFactorProperty);
+        }
+
+        /// <summary>
+        /// Dependency property for Input
+        /// </summary>
+        public static readonly DependencyProperty InputProperty = RegisterPixelShaderSamplerProperty(nameof(Input), typeof(GrayscaleEffect), 0);
+
+        /// <summary>
+        /// Implicit input
+        /// </summary>
+        public Brush Input
+        {
+            get => (Brush)GetValue(InputProperty);
+            set => SetValue(InputProperty, value);
+        }
+
+        /// <summary>
+        /// Dependency property for saturation factor
+        /// </summary>
+        public static readonly DependencyProperty SaturationFactorProperty = DependencyProperty.Register(nameof(SaturationFactor), typeof(double), typeof(GrayscaleEffect), new UIPropertyMetadata(0.0, PixelShaderConstantCallback(0), CoerceSaturationFactor));
+
+        public double SaturationFactor
+        {
+            get => (double)GetValue(SaturationFactorProperty);
+            set => SetValue(SaturationFactorProperty, value);
+        }
+
+        private static object CoerceSaturationFactor(DependencyObject d, object value)
+        {
+            var effect = (GrayscaleEffect)d;
+            double newFactor = (double)value;
+
+            return newFactor < 0.0 || newFactor > 1.0 ? effect.SaturationFactor : (object)newFactor;
+        }
+
+        private PixelShader CreatePixelShader()
+        {
+            var pixelShader = new PixelShader();
+
+            if (DesignerProperties.GetIsInDesignMode(this) == false)
+            {
+                pixelShader.UriSource = new Uri("E:\\Documenten\\Projecten\\OriWotWTracker\\effects\\grayscale.ps", UriKind.Absolute);
+            }
+
+            return pixelShader;
+        }
+    }
+
+    public class AutoGrayableImage : Image
+    {   
+        private double _storedOpacity = 1.0;
+        private static readonly Effect _grayscaleEffect = new GrayscaleEffect();
+        /// <summary>
+        /// Overwritten to handle changes of IsEnabled, Source and OpacityMask properties
+        /// </summary>
+        protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+        {
+            base.OnPropertyChanged(e);
+            if (e.Property.Name.Equals(nameof(IsEnabled)))
+            {
+                if (IsEnabled)
+                {
+                    //Opacity = _storedOpacity;
+                    Effect = null;
+                }
+                else
+                {
+                    //_storedOpacity = Opacity;
+                    //Opacity = 0.5;
+                    Effect = _grayscaleEffect;
+                }
+            }
+        }
+    }
+
+
     /// <summary>
     /// Interaction logic for TrackerWindow.xaml
     /// </summary>
