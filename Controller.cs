@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using System.Collections.Generic;
 
 namespace OriWotWTracker
 {
@@ -58,18 +59,22 @@ namespace OriWotWTracker
 
         public void UpdateSeedName(string Seedpath)
         {
-            CurrentSeedPath = Seedpath;
-            string config = File.ReadLines(Seedpath).Last().Replace("// Config: ", "");
+            view.Dispatcher.Invoke(() =>
+            {
+                CurrentSeedPath = Seedpath;
+                string config = File.ReadLines(Seedpath).Last().Replace("// Config: ", "");
 
-            var configjson = JsonConvert.DeserializeObject<JToken>(config);
-            var flags = configjson["flags"];
+                var configjson = JObject.Parse(config);
+                var flags = JsonConvert.DeserializeObject<List<string>>(configjson["goalmodes"].ToString());
 
+                TrackerWindow window = (TrackerWindow)Application.Current.MainWindow;
 
+                window.WispsFlag.Visibility = flags.GetVisibilityFromString("Wisps");
+                window.TreesFlag.Visibility = flags.GetVisibilityFromString("Trees");
+                window.QuestsFlag.Visibility = flags.GetVisibilityFromString("Quests");
+                window.WorldTourFlag.Visibility = flags.GetVisibilityFromString("Relics");
 
-
-
+            });
         }
-
-
     }
 }

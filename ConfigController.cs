@@ -25,7 +25,6 @@ namespace OriWotWTracker
             else
             {
                 return Config["Tracker"][key];
-
             }
         }
 

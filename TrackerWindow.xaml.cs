@@ -109,6 +109,8 @@ namespace OriWotWTracker
 
         public GameState Current_gamestate { get => current_gamestate; set => current_gamestate = value; }
 
+        public Xceed.Wpf.Toolkit.ColorPicker cpr = new Xceed.Wpf.Toolkit.ColorPicker();
+
         public TrackerWindow(GameState Current_Gamestate)
         {
             Current_gamestate = Current_Gamestate;
@@ -125,8 +127,17 @@ namespace OriWotWTracker
                 this.Topmost = false;
             }
 
+            cpr.SelectedColorChanged += new RoutedPropertyChangedEventHandler<Color?>(cpr_SelectedColorChanged);
 
             InitializeComponent();
+        }
+
+        public void cpr_SelectedColorChanged(object sender, EventArgs e)
+        {
+            var args = (RoutedPropertyChangedEventArgs<Color?>) e;
+
+            ConfigController.SetConfig("BackgroundColour", cpr.SelectedColor.ToString());
+            MainGrid.Background = new SolidColorBrush((Color)cpr.SelectedColor);
         }
 
         private void Toggle_on(object sender, MouseButtonEventArgs e)
@@ -185,6 +196,20 @@ namespace OriWotWTracker
             ConfigController.SetConfig("AlwaysOnTop", "false");
         }
 
+        private void bgcolor_click(object sender, RoutedEventArgs e)
+        {
+            cpr.SelectedColor = ((SolidColorBrush)MainGrid.Background).Color;
+
+            Window window = new Window
+            {
+                Title = "Pick a background color",
+                Content = cpr,
+                SizeToContent = SizeToContent.WidthAndHeight,
+                ResizeMode = ResizeMode.NoResize
+            };
+
+            window.ShowDialog();
+        }
 
         //private void Cycle_WeaponUpgrade(object sender, MouseButtonEventArgs e)
         //{

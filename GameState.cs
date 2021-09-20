@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace OriWotWTracker
@@ -50,6 +51,19 @@ namespace OriWotWTracker
             name = Name;
             collected = false;
             //image = img;
+        }
+    }
+
+    public class Wisps
+    {
+        public int amount;
+        //public Image image;
+        public string Text { get; }
+
+        public Wisps()
+        {
+            amount = 0;
+            Text = $"{amount}";
         }
     }
 
@@ -107,6 +121,8 @@ namespace OriWotWTracker
         public Collectible SpiritLight { get => spiritlight; set => spiritlight = value; }
         public Collectible Keystones { get => keystones; set => keystones = value; }
         public Collectible Ore { get => ore; set => ore = value; }
+
+        public Wisps Wisps = new Wisps();
 
         public Dictionary<string, Skill> Skills { get => skills; set => skills = value; }
         public Dictionary<string, Event> Trees { get => trees; set => trees = value; }

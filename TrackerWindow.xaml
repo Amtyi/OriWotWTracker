@@ -4,39 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OriWotWTracker"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Closing="Window_Closing"
         Deactivated="Window_Deactivated"
         Title="Will of the Wisps item Tracker" Height="750" Width="500" Icon="img/Sein.png" ResizeMode="NoResize">
-    <Grid Background="#FF4D4D4D">
-    <!--<Grid Background="#FF2D2D2D">-->
+    <Grid x:Name="MainGrid" Background="#FF4D4D4D">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="139*"/>
             <ColumnDefinition Width="107*"/>
         </Grid.ColumnDefinitions>
 
-        <Image x:Name="image" Source="img/gear.png" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="36" MouseLeftButtonUp="Trigger_contextMenu" Grid.Column="1" Margin="178.8,0,-0.4,0">
+        <!--<Image x:Name="image" Source="img/gear.png" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="36" MouseLeftButtonUp="Trigger_contextMenu" Grid.Column="1" Margin="178.8,0,-0.4,0">
             <Image.ContextMenu>
                 <ContextMenu>
                     <MenuItem Name="AlwaysOnTop" Header="Always on top" IsCheckable="True" Checked="AlwaysOnTop_Checked" Unchecked="AlwaysOnTop_Unchecked"/>
+                    <MenuItem Name="bgcolor" Header="Background colour" Click="bgcolor_click"/>
                 </ContextMenu>
             </Image.ContextMenu>
-        </Image>
+        </Image>-->
 
         <Image Name="Wisp" Margin="219,209,209.6,445.8" Source="img/Wisp.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-        <Image Name="Wisp3" Margin="19,559,195.2,95.8" Source="img/Wisp.png" Stretch="Fill"/>
-        <local:AutoGrayableImage x:Name="Wisp2" Margin="19,496,195.2,158.8" Source="img/Wisp.png" Stretch="Fill" IsEnabled="False"/>
+        <TextBlock x:Name="WispsCount" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="213,266,0,0" VerticalAlignment="Top" Width="66" TextAlignment="Center" Text="{Binding Path=Wisps.Text}"/>
+        <!--<Image Name="Wisp3" Margin="19,559,195.2,95.8" Source="img/Wisp.png" Stretch="Fill"/>-->
+        <!--<local:AutoGrayableImage x:Name="Wisp2" Margin="19,496,195.2,158.8" Source="img/Wisp.png" Stretch="Fill" IsEnabled="False"/>-->
 
         <Image Name="Sword" ToolTip="Sword" Margin="209,108,209.6,537.8" Source="{Binding Skills[Sword].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.ColumnSpan="2"/>
         <Image Name="Shuriken" ToolTip="Shuriken" Margin="3.8,254,144.6,400.8" Source="{Binding Skills[Shuriken].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1"/>
         <Image Name="Spike" ToolTip="Spike" Margin="5,168,145,487" Source="{Binding Skills[Spike].Source_current}" Stretch="Fill" Grid.Column="1" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
         <Image Name="Hammer" ToolTip="Hammer" Margin="138,254,76.2,400.8" Source="{Binding Skills[Hammer].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
         <Image Name="Sentry" ToolTip="Sentry" Margin="138,168,76,487" Source="{Binding Skills[Sentry].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
-        <Image Name="Blaze" ToolTip="Blaze" Margin="214,299,0.2,355.8" Source="{Binding Skills[Blaze].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off">
-            <Image.Effect>
+        <Image Name="Blaze" ToolTip="Blaze" Margin="214,299,0.2,355.8" Source="{Binding Skills[Blaze].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off"/>
+        <!--<Image.Effect>
                 <local:GrayscaleEffect/>
             </Image.Effect>
-        </Image>
+        </Image>-->
+        <!--<xctk:ColorPicker Name="ClrPcker_Background" SelectedColorChanged="ClrPcker_Background_SelectedColorChanged"></xctk:ColorPicker>-->
+
 
         <!--
         <Image Name="Sword2" ToolTip="Sword" Margin="214,108,204.6,537.8" Source="img/Sword.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.ColumnSpan="2"/>
@@ -73,8 +77,14 @@
         <Image Name ="KeyStone" Margin="33.8,496,117.6,161.8" Source="img/Keystone.png" Stretch="Fill" RenderTransformOrigin="1.116,0.507" Grid.Column="1"/>
         <TextBlock Name="KeyStone_amount" Margin="33.8,559,0,131.8" FontSize="20" Foreground="White" TextAlignment="Center" Text="{Binding Path=Keystones.Amount}" HorizontalAlignment="Left" Width="63" Grid.Column="1"/>
 
-        <local:AutoGrayableImage x:Name="Blaze_Copy2" ToolTip="Blaze" Margin="119.8,507,29.6,147.8" Source="img\Blaze_unlocked.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1" IsEnabled="True"/>
-        <local:AutoGrayableImage x:Name="Blaze_Copy" ToolTip="Blaze" Margin="119.8,573,29.6,81.8" Source="{Binding Skills[Blaze].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1" IsEnabled="False"/>
+        <TextBlock x:Name="Flags" FontSize="24" Foreground="White" HorizontalAlignment="Left" Margin="188,614,0,0" VerticalAlignment="Top" Width="98" TextAlignment="Center" Text="Flags:" Height="43" Grid.ColumnSpan="2"/>
+        <Image x:Name="WispsFlag" ToolTip="All Wisps" Margin="147,645,86.2,32.8" Source="img\wisp.png" Stretch="Fill" RenderTransformOrigin="-2.995,3.014"/>
+        <Image x:Name="TreesFlag" ToolTip="All Trees" Margin="199,645,49.2,32.8" Source="img\SkillTree.png" Stretch="Fill" RenderTransformOrigin="-2.995,3.014"/>
+        <Image x:Name="QuestsFlag" ToolTip="All Quests" Margin="239,645,208.6,32.8" Source="img\Quest.png" Stretch="Fill" RenderTransformOrigin="-2.995,3.014" Grid.ColumnSpan="2"/>
+        <Image x:Name="WorldTourFlag" ToolTip="World Tour" Margin="11.8,646,156.6,31.8" Source="img\MapStone.png" Stretch="Fill" RenderTransformOrigin="-2.995,3.014" Grid.Column="1"/>
+
+        <!--<local:AutoGrayableImage x:Name="Blaze_Copy2" ToolTip="Blaze" Margin="119.8,507,29.6,147.8" Source="img\Blaze_unlocked.png" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1" IsEnabled="True"/>-->
+        <!--<local:AutoGrayableImage x:Name="Blaze_Copy" ToolTip="Blaze" Margin="119.8,573,29.6,81.8" Source="{Binding Skills[Blaze].Source_current}" Stretch="Fill" MouseLeftButtonUp="Toggle_on" MouseRightButtonUp="Toggle_off" Grid.Column="1" IsEnabled="False"/>-->
 
     </Grid>
 </Window>

@@ -31,6 +31,7 @@ namespace OriWotWTracker
             // Create a new FileSystemWatcher and set its properties.
             FileSystemWatcher filewatcher = new FileSystemWatcher();
 
+            //filewatcher.Path = Directory.GetCurrentDirectory();
             filewatcher.Path = "C:\\moon";
             filewatcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
             filewatcher.Filter = "trackfile.json";
@@ -58,9 +59,7 @@ namespace OriWotWTracker
                 //    return;
                 //}
 
-
                 JSONObj JsonObject = JsonSerializer.Deserialize<JSONObj>(FileContents);
-
 
                 TrackFileWatcher.OldFileContents = FileContents;
                 controller.ParseChanges(JsonObject);
